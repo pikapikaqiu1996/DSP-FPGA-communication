@@ -1,0 +1,52 @@
+/*
+ *  ======== build-fpga_loader.tcf ========
+ *
+ *! Revision History
+ *! ================
+ *! 27-Jun-2003 mw Created.
+ *
+ * To create fppa_loader.cdb:
+ *
+ * 1)  Open a Windows command prompt window and cd to the root of your Code
+ *     Composer installation directory (normally c:\ti).  Type dosrun in the
+ *     command prompt window to execute dosrun.bat which adds the Code
+ *     Composer command line utilities to your automatic search path.
+ *
+ * 2)  Modify the prog.load statement below to reflect the location of your
+ *     Code Composer installation directory if it is not in c:\ti.
+ *
+ * 3)  Execute the following command in your command prompt window:
+ *
+ *     tconf build-fpga_loader.tcf
+ */
+
+/* Load DM642 CDB seed file */
+prog.load("c:/CCStudio/c6000/bios/include/dm642.cdb");
+
+/* Get program objects */
+utils.getProgObjs(prog);
+
+/* Set clock to 720 MHz */
+GBL.CLKOUT = 720.0000;
+
+/* Disable Task Manager */
+TSK.ENABLETSK = 0;
+
+/* Disable memory heaps */
+MEM.NOMEMORYHEAPS = 1;
+
+/* Disable RTDX and related features */
+GBL.ENABLEINST = 0;
+GBL.ENABLEALLTRC = 0;
+HST.HOSTLINKTYPE = "NONE";
+RTDX.ENABLERTDX = 0;
+
+/* Insert BOOT memory section and adjust ISRAM */
+ISRAM.len = 0x0003fb00;
+ISRAM.base = 0x00000400;
+BOOT = MEM.create("BOOT");
+BOOT.len = 0x00000400;
+BOOT.base = 0x00000000;
+
+/* Generate .cdb file */
+prog.gen("fpga_loader");

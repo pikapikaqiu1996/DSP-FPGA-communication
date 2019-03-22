@@ -1,0 +1,16 @@
+--------------------------  fpga_loader.pjt - Debug  --------------------------
+[fpga_loader.cdb] "D:\CCStudio_v3.1\plugins\bios\gconfgen" fpga_loader.cdb
+
+[boot.asm] "D:\CCStudio_v3.1\C6000\cgtools\bin\cl6x" -g -q -fr"./Debug" -i"." -i"../../include" -d"_DEBUG" -d"CHIP_DM642" -ml3 -mv6400 -@"Debug.lkf" "boot.asm"
+
+[fpga_loader.c] "D:\CCStudio_v3.1\C6000\cgtools\bin\cl6x" -g -q -fr"./Debug" -i"." -i"../../include" -d"_DEBUG" -d"CHIP_DM642" -ml3 -mv6400 -@"Debug.lkf" "fpga_loader.c"
+
+[fpga_loadercfg.s62] "D:\CCStudio_v3.1\C6000\cgtools\bin\cl6x" -g -q -fr"./Debug" -i"." -i"../../include" -d"_DEBUG" -d"CHIP_DM642" -ml3 -mv6400 -@"Debug.lkf" "fpga_loadercfg.s62"
+
+[fpga_loadercfg_c.c] "D:\CCStudio_v3.1\C6000\cgtools\bin\cl6x" -g -q -fr"./Debug" -i"." -i"../../include" -d"_DEBUG" -d"CHIP_DM642" -ml3 -mv6400 -@"Debug.lkf" "fpga_loadercfg_c.c"
+
+[Linking...] "D:\CCStudio_v3.1\C6000\cgtools\bin\cl6x" -@"Debug.lkf"
+<Linking>
+
+Build Complete,
+  0 Errors, 0 Warnings, 0 Remarks.

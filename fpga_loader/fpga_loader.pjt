@@ -1,0 +1,70 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="D:\CCStudio_v3.1\boards\evmdm642\flashburn\fpga_loader\"
+ProjectType=Executable
+CPUFamily=TMS320C64XX
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Tool="Linker"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="..\..\..\..\C6000\csl\lib\cslDM642.lib"
+Source="boot.asm"
+Source="fpga_loader.c"
+Source="fpga_loader.cdb"
+Source="fpga_loader_ahext.hex"
+Source="fpga_loader_ahext1.hex"
+Source="fpga_loader_ahex.cmd"
+Source="userlinker.cmd"
+
+[Generated Files]
+Source="fpga_loadercfg.cmd"
+Source="fpga_loadercfg.s62"
+Source="fpga_loadercfg_c.c"
+
+["Compiler" Settings: "Debug"]
+Options=-g -q -fr".\Debug" -i"." -i"..\..\include" -d"_DEBUG" -d"CHIP_DM642" -ml3 -mv6400
+
+["Compiler" Settings: "Release"]
+Options=-q -o3 -fr".\Release" -mv6400
+
+["DspBiosBuilder" Settings: "Debug"]
+Options=-v6x
+
+["DspBiosBuilder" Settings: "Release"]
+Options=-v6x
+
+["Linker" Settings: "Debug"]
+Options=-q -c -m".\Debug\fpga_loader.map" -o".\Debug\fpga_loader.out" -x -i"..\..\lib" -l"evmdm642bsl.lib"
+
+["Linker" Settings: "Release"]
+Options=-q -c -m".\Release\fpga_loader.map" -o".\Release\fpga_loader.out" -x
+
+["fpga_loader_ahext.hex" Settings: "Debug"]
+ExcludeFromBuild=true
+
+["fpga_loader_ahext.hex" Settings: "Release"]
+ExcludeFromBuild=true
+
+["fpga_loader_ahext1.hex" Settings: "Debug"]
+ExcludeFromBuild=true
+
+["fpga_loader_ahext1.hex" Settings: "Release"]
+ExcludeFromBuild=true
+
+["fpga_loadercfg.cmd" Settings: "Debug"]
+ExcludeFromBuild=true
+
+["fpga_loadercfg.cmd" Settings: "Release"]
+ExcludeFromBuild=true
+
+["fpga_loader_ahex.cmd" Settings: "Debug"]
+LinkOrder=1
+
+["fpga_loader_ahex.cmd" Settings: "Release"]
+LinkOrder=1
+

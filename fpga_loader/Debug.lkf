@@ -1,0 +1,7 @@
+-z -q -c -m"./Debug/fpga_loader.map" -o"./Debug/fpga_loader.out" -x -i"../../lib" -i"D:/CCStudio_v3.1/C6000/rtdx/lib" -i"D:/CCStudio_v3.1/C6000/csl/lib" -i"D:/CCStudio_v3.1/C6000/xdais/lib" -i"D:/CCStudio_v3.1/C6000/bios/lib" -i"D:/CCStudio_v3.1/C6000/cgtools/lib" -l"evmdm642bsl.lib"
+"D:\CCStudio_v3.1\boards\evmdm642\flashburn\fpga_loader\Debug\boot.obj"
+"D:\CCStudio_v3.1\boards\evmdm642\flashburn\fpga_loader\Debug\fpga_loader.obj"
+"D:\CCStudio_v3.1\boards\evmdm642\flashburn\fpga_loader\Debug\fpga_loadercfg.obj"
+"D:\CCStudio_v3.1\boards\evmdm642\flashburn\fpga_loader\Debug\fpga_loadercfg_c.obj"
+"D:\CCStudio_v3.1\C6000\csl\lib\cslDM642.lib"
+"D:\CCStudio_v3.1\boards\evmdm642\flashburn\fpga_loader\userlinker.cmd"
